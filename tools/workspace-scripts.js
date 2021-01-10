@@ -57,12 +57,19 @@ module.exports = {
 			},
 		},
 		'⚙️': {
-			script: `npx cowsay "@nativescript/* packages will keep your ⚙️ cranking"`,
-			description: '_____________  @nativescript/*  _____________',
+			script: `npx cowsay "@knotes/* packages will keep your ⚙️ cranking"`,
+			description: '_____________  @knotes/*  _____________',
 		},
 		// packages
 		// build output is always in dist/packages
-		'@nativescript': {
+		'@knotes': {
+			// @knotes/nativescript-generate-pdf
+			'nativescript-generate-pdf': {
+				build: {
+					script: 'nx run nativescript-generate-pdf:build.all',
+					description: '@knotes/nativescript-generate-pdf: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -73,10 +80,14 @@ module.exports = {
 			description: '_____________  Focus (VS Code supported)  _____________',
 		},
 		focus: {
+			'nativescript-generate-pdf': {
+				script: 'nx run nativescript-generate-pdf:focus',
+				description: 'Focus on @knotes/nativescript-generate-pdf',
+			},
 			reset: {
 				script: 'nx run all:focus',
 				description: 'Reset Focus',
-			}
+			},
 		},
 		'.....................': {
 			script: `npx cowsay "That's all for now folks ~"`,
