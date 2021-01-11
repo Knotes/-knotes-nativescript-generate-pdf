@@ -1,14 +1,11 @@
-<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
     <Page.actionBar>
         <ActionBar title="nativescript-generate-pdf" icon="" class="action-bar">
+          <ActionItem text="refresh" tap="onRefresh"></ActionItem>
         </ActionBar>
     </Page.actionBar>
-    <StackLayout class="p-20">
-        <ScrollView class="h-full">
-          <StackLayout>
-            <Button text="Test nativescript-generate-pdf" tap="{{ testIt }}" class="btn btn-primary"/>
-
-          </StackLayout>
-        </ScrollView>
-    </StackLayout>
+     <GridLayout>
+        <!-- Add your page content here -->
+        <WebView row="1" loadFinished="onWebViewLoaded" id="myWebView" src="{{ webViewSRC }}" />
+    </GridLayout>
 </Page>
