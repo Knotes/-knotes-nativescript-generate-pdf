@@ -15,7 +15,7 @@ export function onNavigatingTo(args: NavigatedData) {
 
 export function onWebViewLoaded(args: LoadEventData) {
 	webView = (<WebView>args.object).nativeView;
-	new GeneratePdf().createPdf(webView, 'MyPdfFileName');
+	console.log(new GeneratePdf().createPdf(webView, 'MyPdfFileName'));
 }
 
 export function onRefresh(args: LoadEventData) {
