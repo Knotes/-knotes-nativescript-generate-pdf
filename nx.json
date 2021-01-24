@@ -25,6 +25,9 @@
 		},
 		"nativescript-generate-pdf": {
 			"tags": []
+		},
+		"nativescript-wechat": {
+			"tags": []
 		}
 	},
 	"workspaceLayout": {

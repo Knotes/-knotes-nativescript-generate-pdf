@@ -8,6 +8,7 @@ const routes: Routes = [
 	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: 'home', component: HomeComponent },
 	{ path: 'nativescript-generate-pdf', loadChildren: () => import('./plugin-demos/nativescript-generate-pdf.module').then((m) => m.NativescriptGeneratePdfModule) },
+	{ path: 'nativescript-wechat', loadChildren: () => import('./plugin-demos/nativescript-wechat.module').then((m) => m.NativescriptWechatModule) },
 ];
 
 @NgModule({

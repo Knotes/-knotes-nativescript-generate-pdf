@@ -15,7 +15,8 @@
 		"reflect-metadata": "file:../../node_modules/reflect-metadata",
 		"rxjs": "file:../../node_modules/rxjs",
 		"zone.js": "file:../../node_modules/zone.js",
-		"@knotes/nativescript-generate-pdf": "file:../../dist/packages/nativescript-generate-pdf"
+		"@knotes/nativescript-generate-pdf": "file:../../dist/packages/nativescript-generate-pdf",
+		"@knotes/nativescript-wechat": "file:../../dist/packages/nativescript-wechat"
 	},
 	"devDependencies": {
 		"@angular/compiler-cli": "file:../../node_modules/@angular/compiler-cli",

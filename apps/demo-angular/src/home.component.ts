@@ -9,5 +9,8 @@ export class HomeComponent {
 		{
 			name: 'nativescript-generate-pdf',
 		},
+		{
+			name: 'nativescript-wechat',
+		},
 	];
 }

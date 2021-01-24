@@ -70,6 +70,13 @@ module.exports = {
 					description: '@knotes/nativescript-generate-pdf: Build',
 				},
 			},
+			// @knotes/nativescript-wechat
+			'nativescript-wechat': {
+				build: {
+					script: 'nx run nativescript-wechat:build.all',
+					description: '@knotes/nativescript-wechat: Build',
+				},
+			},
 			'build-all': {
 				script: 'nx run all:build',
 				description: 'Build all packages',
@@ -83,6 +90,10 @@ module.exports = {
 			'nativescript-generate-pdf': {
 				script: 'nx run nativescript-generate-pdf:focus',
 				description: 'Focus on @knotes/nativescript-generate-pdf',
+			},
+			'nativescript-wechat': {
+				script: 'nx run nativescript-wechat:focus',
+				description: 'Focus on @knotes/nativescript-wechat',
 			},
 			reset: {
 				script: 'nx run all:focus',

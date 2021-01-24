@@ -73,7 +73,7 @@
 					"builder": "@nrwl/workspace:run-commands",
 					"outputs": ["dist/packages"],
 					"options": {
-						"commands": ["nx run nativescript-generate-pdf:build.all"],
+						"commands": ["nx run nativescript-generate-pdf:build.all", "nx run nativescript-wechat:build.all"],
 						"parallel": false
 					}
 				},
@@ -125,6 +125,49 @@
 					"outputs": ["dist/packages"],
 					"options": {
 						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-generate-pdf"],
+						"parallel": false
+					}
+				}
+			}
+		},
+		"nativescript-wechat": {
+			"root": "packages/nativescript-wechat",
+			"sourceRoot": "packages/nativescript-wechat",
+			"projectType": "library",
+			"schematics": {},
+			"architect": {
+				"build": {
+					"builder": "@nrwl/node:package",
+					"options": {
+						"outputPath": "dist/packages/nativescript-wechat",
+						"tsConfig": "packages/nativescript-wechat/tsconfig.json",
+						"packageJson": "packages/nativescript-wechat/package.json",
+						"main": "packages/nativescript-wechat/index.ts",
+						"assets": [
+							"packages/nativescript-wechat/*.md",
+							"packages/nativescript-wechat/index.d.ts",
+							"LICENSE",
+							{
+								"glob": "**/*",
+								"input": "packages/nativescript-wechat/platforms/",
+								"output": "./platforms/"
+							}
+						]
+					}
+				},
+				"build.all": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx run nativescript-wechat:build", "node tools/scripts/build-finish.ts nativescript-wechat"],
+						"parallel": false
+					}
+				},
+				"focus": {
+					"builder": "@nrwl/workspace:run-commands",
+					"outputs": ["dist/packages"],
+					"options": {
+						"commands": ["nx g @nativescript/plugin-tools:focus-packages nativescript-wechat"],
 						"parallel": false
 					}
 				}

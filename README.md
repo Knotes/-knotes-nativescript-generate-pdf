@@ -6,6 +6,7 @@ npm start
 ```
 
 - @knotes/nativescript-generate-pdf
+- @knotes/nativescript-wechat
 
 # How to use?
 
