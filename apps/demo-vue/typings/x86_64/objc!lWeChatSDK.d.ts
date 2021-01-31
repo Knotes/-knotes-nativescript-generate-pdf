@@ -206,6 +206,8 @@ declare class WXApi extends NSObject {
 
 	static alloc(): WXApi; // inherited from NSObject
 
+	static checkUniversalLinkReady(completion: (p1: WXULCheckStep, p2: WXCheckULStepResult) => void): void;
+
 	static getApiVersion(): string;
 
 	static getWXAppInstallUrl(): string;
@@ -294,6 +296,23 @@ declare class WXCardItem extends NSObject {
 	encryptCode: string;
 
 	extMsg: string;
+}
+
+declare class WXCheckULStepResult extends NSObject {
+
+	static alloc(): WXCheckULStepResult; // inherited from NSObject
+
+	static new(): WXCheckULStepResult; // inherited from NSObject
+
+	errorInfo: string;
+
+	success: boolean;
+
+	suggestion: string;
+
+	constructor(o: { checkResult: boolean; errorInfo: string; suggestion: string; });
+
+	initWithCheckResultErrorInfoSuggestion(success: boolean, errorInfo: string, suggestion: string): this;
 }
 
 declare class WXChooseCardReq extends BaseReq {
@@ -696,6 +715,23 @@ declare class WXTextObject extends NSObject {
 	static object(): WXTextObject;
 
 	contentText: string;
+}
+
+declare const enum WXULCheckStep {
+
+	Params = 0,
+
+	SystemVersion = 1,
+
+	WechatVersion = 2,
+
+	SDKInnerOperation = 3,
+
+	LaunchWechat = 4,
+
+	BackToCurrentApp = 5,
+
+	Final = 6
 }
 
 declare class WXVideoObject extends NSObject {

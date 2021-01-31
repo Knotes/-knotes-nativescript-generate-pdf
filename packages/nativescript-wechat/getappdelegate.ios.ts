@@ -5,7 +5,10 @@ declare var UIResponder, UIApplicationDelegate, NSObject, WXApi;
 
 export function getAppDelegate() {
     // Play nice with other plugins by not completely ignoring anything already added to the appdelegate
+    console.log('11111111111111')
+    console.dir(Application.ios)
     if (Application.ios.delegate === undefined) {
+        @NativeClass()
         class UIApplicationDelegateImpl extends UIResponder {
             public static ObjCProtocols = [UIApplicationDelegate];
 
@@ -17,6 +20,7 @@ export function getAppDelegate() {
         Application.ios.delegate = UIApplicationDelegateImpl;
     }
 
+    console.log(Application.ios.delegate);
     return Application.ios.delegate;
 }
 
@@ -33,6 +37,7 @@ export function setupAppDeligate(wechatAppId, universalLink) {
     let appDelegate = getAppDelegate();
 
     enableMultipleOverridesFor(appDelegate, 'applicationDidFinishLaunchingWithOptions', function (application, launchOptions) {
+        console.log('setupAppDeligate 5.0')
         WXApi.registerAppUniversalLink(wechatAppId, universalLink);
         console.log('setupAppDeligate 5')
         return true;
